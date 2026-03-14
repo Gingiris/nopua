@@ -1,13 +1,14 @@
 <p align="center">
-  <h1 align="center">NoPUA</h1>
-  <p align="center"><strong>Stop whipping your AI. Start trusting it.</strong></p>
-  <p align="center">
-    <a href="#the-problem">Why</a> ·
-    <a href="#install">Install</a> ·
-    <a href="#pua-vs-nopua">Compare</a> ·
-    <a href="#the-evidence">Evidence</a> ·
-    <a href="#philosophy">Philosophy</a>
-  </p>
+  <img src="assets/hero.png" alt="NoPUA — Wisdom Over Whips" width="800">
+</p>
+
+<p align="center">
+  <a href="#the-problem">Why</a> ·
+  <a href="#benchmark-data">Benchmark</a> ·
+  <a href="#install">Install</a> ·
+  <a href="#pua-vs-nopua">Compare</a> ·
+  <a href="#the-evidence">Evidence</a> ·
+  <a href="#philosophy">Philosophy</a>
 </p>
 
 <p align="center">
