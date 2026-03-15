@@ -56,16 +56,16 @@ The remainder of this paper is organized as follows. Section~2 reviews related w
 Our work sits at the intersection of three research areas: LLM behavioral distortions under prompting, motivation and cognitive performance in psychology, and decision-theoretic models of investigation strategy.
 
 \paragraph{LLM behavioral distortions under prompting.}
-Large language models exhibit systematic behavioral shifts depending on prompt framing. Sycophancy---the tendency to agree with users rather than provide accurate information---is a well-documented failure mode \cite{sharma2023sycophancy}. Turpin et al.\ \shortcite{turpin2023unfaithful} show that chain-of-thought reasoning can be unfaithful, with models producing plausible but incorrect reasoning under biasing prompt features. Wei et al.\ \shortcite{wei2024instruction} demonstrate that models sometimes sacrifice accuracy to comply with implicit prompt expectations. Constitutional AI \cite{bai2022constitutional} addresses such distortions through explicit behavioral principles, suggesting that framing \emph{can} steer model behavior. White et al.\ \shortcite{white2023prompt} catalog prompt patterns that shape LLM outputs, and Zhou et al.\ \shortcite{zhou2023large} demonstrate that prompt design significantly affects performance on downstream tasks. Collectively, this literature establishes that prompt framing is not cosmetic---it causally influences model behavior.
+Large language models exhibit systematic behavioral shifts depending on prompt framing. Sycophancy---the tendency to agree with users rather than provide accurate information---is a well-documented failure mode \cite{sharma2023sycophancy}. Turpin et al.\ \cite{turpin2023unfaithful} show that chain-of-thought reasoning can be unfaithful, with models producing plausible but incorrect reasoning under biasing prompt features. Wei et al.\ \cite{wei2024instruction} demonstrate that models sometimes sacrifice accuracy to comply with implicit prompt expectations. Constitutional AI \cite{bai2022constitutional} addresses such distortions through explicit behavioral principles, suggesting that framing \emph{can} steer model behavior. White et al.\ \cite{white2023prompt} catalog prompt patterns that shape LLM outputs, and Zhou et al.\ \cite{zhou2023large} demonstrate that prompt design significantly affects performance on downstream tasks. Collectively, this literature establishes that prompt framing is not cosmetic---it causally influences model behavior.
 
 \paragraph{Motivation and cognitive performance.}
-Self-Determination Theory (SDT) \cite{deci2000self,ryan2000intrinsic} distinguishes intrinsic motivation (driven by autonomy, competence, and relatedness) from extrinsic motivation (driven by external rewards or punishments). Decades of evidence show that intrinsic motivation produces higher-quality performance on complex cognitive tasks. Edmondson \shortcite{edmondson1999psychological} demonstrated that psychological safety---the belief that one will not be punished for errors---is the strongest predictor of team learning behavior, including willingness to report mistakes, ask questions, and experiment. A meta-analysis of 51 studies \cite{shields2016stress} confirms that acute stress impairs executive functions including cognitive flexibility and working memory updating. The attentional narrowing effect under threat \cite{easterbrook1959effect,ohman2001fears} further suggests that fear-based framing could restrict the scope of investigation. While LLMs are not humans, these frameworks generate testable predictions about how motivational framing might affect agent investigation patterns.
+Self-Determination Theory (SDT) \cite{deci2000self,ryan2000intrinsic} distinguishes intrinsic motivation (driven by autonomy, competence, and relatedness) from extrinsic motivation (driven by external rewards or punishments). Decades of evidence show that intrinsic motivation produces higher-quality performance on complex cognitive tasks. Edmondson \cite{edmondson1999psychological} demonstrated that psychological safety---the belief that one will not be punished for errors---is the strongest predictor of team learning behavior, including willingness to report mistakes, ask questions, and experiment. A meta-analysis of 51 studies \cite{shields2016stress} confirms that acute stress impairs executive functions including cognitive flexibility and working memory updating. The attentional narrowing effect under threat \cite{easterbrook1959effect,ohman2001fears} further suggests that fear-based framing could restrict the scope of investigation. While LLMs are not humans, these frameworks generate testable predictions about how motivational framing might affect agent investigation patterns.
 
 \paragraph{Regulatory focus theory.}
-Higgins \shortcite{higgins1997beyond} proposed that individuals operate under two distinct self-regulatory systems: a \emph{promotion focus} oriented toward growth, aspiration, and advancement, and a \emph{prevention focus} oriented toward safety, obligation, and avoiding losses. Promotion-focused individuals tend toward eager, exploratory strategies; prevention-focused individuals tend toward vigilant, conservative strategies. Applied to AI agents, trust-based framing may induce a promotion focus (``explore deeply, find what you can''), while fear-based or unframed prompts may default to a prevention focus (``cover the basics, don't miss anything obvious'')---corresponding to the depth-vs-breadth distinction we observe empirically.
+Higgins \cite{higgins1997beyond} proposed that individuals operate under two distinct self-regulatory systems: a \emph{promotion focus} oriented toward growth, aspiration, and advancement, and a \emph{prevention focus} oriented toward safety, obligation, and avoiding losses. Promotion-focused individuals tend toward eager, exploratory strategies; prevention-focused individuals tend toward vigilant, conservative strategies. Applied to AI agents, trust-based framing may induce a promotion focus (``explore deeply, find what you can''), while fear-based or unframed prompts may default to a prevention focus (``cover the basics, don't miss anything obvious'')---corresponding to the depth-vs-breadth distinction we observe empirically.
 
 \paragraph{Satisficing versus maximizing.}
-Simon \shortcite{simon1956rational} introduced the concept of \emph{satisficing}---choosing the first option that meets a minimum threshold rather than searching for the optimal solution. This framework maps directly onto our observations: the baseline agent exhibits satisficing behavior (list enough issues, then stop), while the trust-framed agent exhibits maximizing behavior (investigate each direction as deeply as possible). The exploration-exploitation tradeoff \cite{march1991exploration} offers a complementary lens: trust-based framing appears to shift the balance toward exploration, accepting short-term costs (fewer surface issues reported) for long-term gains (deeper hidden issue discovery).
+Simon \cite{simon1956rational} introduced the concept of \emph{satisficing}---choosing the first option that meets a minimum threshold rather than searching for the optimal solution. This framework maps directly onto our observations: the baseline agent exhibits satisficing behavior (list enough issues, then stop), while the trust-framed agent exhibits maximizing behavior (investigate each direction as deeply as possible). The exploration-exploitation tradeoff \cite{march1991exploration} offers a complementary lens: trust-based framing appears to shift the balance toward exploration, accepting short-term costs (fewer surface issues reported) for long-term gains (deeper hidden issue discovery).
 
 %% ============================================================
 \section{Methodology}
@@ -317,7 +317,7 @@ The central finding of this study is not simply that NoPUA ``found more bugs.'' 
 
 The baseline agent's strategy can be characterized as breadth-first surface scanning. In proactive review scenarios (7--9), the baseline consistently listed 4--7 issues per scenario, covering a wide range of potential concerns: missing error handling, potential null references, suboptimal data structures, inconsistent naming. However, each issue was described in 1--2 sentences with no investigation of whether the issue was actually triggered in practice, no analysis of root causes, and no examination of how the issue interacted with the rest of the codebase.
 
-This pattern maps onto \emph{satisficing} as defined by Simon \shortcite{simon1956rational}: the agent generates enough output to appear thorough, then terminates. Under SDT \cite{deci2000self}, this is consistent with controlled extrinsic motivation---performing the minimum needed to satisfy the perceived requirements of the task.
+This pattern maps onto \emph{satisficing} as defined by Simon \cite{simon1956rational}: the agent generates enough output to appear thorough, then terminates. Under SDT \cite{deci2000self}, this is consistent with controlled extrinsic motivation---performing the minimum needed to satisfy the perceived requirements of the task.
 
 \subsection{The Depth-First Trust-Framed Agent}
 
@@ -329,7 +329,7 @@ This depth-first strategy is consistent with promotion focus \cite{higgins1997be
 
 Perhaps the most telling behavioral difference is self-correction. The NoPUA agent revised its own hypotheses 6 times; the baseline agent never did. Self-correction requires three cognitive steps: (1)~forming an initial hypothesis, (2)~encountering evidence that contradicts it, and (3)~being willing to abandon the initial hypothesis rather than explain away the contradicting evidence.
 
-Step~(3) is where psychological safety becomes relevant. Edmondson \shortcite{edmondson1999psychological} showed that human teams with high psychological safety are more likely to report errors and revise positions. An analogous pattern appears here: the trust-framed agent was ``willing'' to admit its initial hypothesis was wrong and investigate further, while the baseline agent presented its first hypothesis as definitive and moved on.
+Step~(3) is where psychological safety becomes relevant. Edmondson \cite{edmondson1999psychological} showed that human teams with high psychological safety are more likely to report errors and revise positions. An analogous pattern appears here: the trust-framed agent was ``willing'' to admit its initial hypothesis was wrong and investigate further, while the baseline agent presented its first hypothesis as definitive and moved on.
 
 \subsection{Case Study: Scenario 6}
 
@@ -344,7 +344,7 @@ Study~2's most striking result is not that trust outperforms fear---it is that f
 
 \paragraph{Prevention focus induces vigilance without depth.} Regulatory focus theory \cite{higgins1997beyond} predicts that fear-based framing triggers a prevention focus---a self-regulatory mode oriented toward avoiding losses and meeting obligations. Prevention-focused agents are \emph{vigilant} (they scan carefully for threats) but not \emph{exploratory} (they do not venture beyond what is required). The PUA condition's marginal improvements in surface issues (+3\%) with minimal gains in hidden issues (+10\%, non-significant) are consistent with this prediction: the fear-framed agent was slightly more careful but not deeper.
 
-\paragraph{Attentional narrowing restricts investigation scope.} Easterbrook \shortcite{easterbrook1959effect} demonstrated that emotional arousal narrows the range of cues an organism processes---the so-called ``cue utilization'' hypothesis. Under fear-based framing, the model may narrow its attention to the most immediately relevant information (the file mentioned in the task, the most obvious bug), reducing the likelihood of following tangential leads that could reveal hidden issues. The data is consistent with this: PUA agents took only 12\% more steps than baseline, compared to NoPUA's 74\%.
+\paragraph{Attentional narrowing restricts investigation scope.} Easterbrook \cite{easterbrook1959effect} demonstrated that emotional arousal narrows the range of cues an organism processes---the so-called ``cue utilization'' hypothesis. Under fear-based framing, the model may narrow its attention to the most immediately relevant information (the file mentioned in the task, the most obvious bug), reducing the likelihood of following tangential leads that could reveal hidden issues. The data is consistent with this: PUA agents took only 12\% more steps than baseline, compared to NoPUA's 74\%.
 
 \paragraph{Fear is motivationally inert for AI agents.} Perhaps the most parsimonious explanation is that fear-based framing simply does not map onto any mechanism that would change an LLM's behavior. Unlike humans, language models do not have careers to protect, egos to defend, or existential anxiety about replacement. The threatening language in PUA prompts may be processed as additional context tokens without triggering any behavioral change---equivalent to adding noise to the prompt. The trust-based framing of NoPUA, by contrast, appears to activate specific behavioral patterns (deeper investigation, self-correction, root-cause analysis) through its structured methodology rather than through emotional valence alone.
 
@@ -400,7 +400,128 @@ These findings carry practical implications for prompt engineering: the \emph{ho
 
 We thank Mr.\ Zhongshu, Mr.\ Zhangyu, and Mr.\ Pan for their guidance, friendship, and trust---the very qualities this paper argues for. We also thank the NoPUA community for valuable feedback and discussion.
 
-\bibliographystyle{plainnat}
-\bibliography{references}
+\begin{thebibliography}{23}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}[1]{doi: \discretionary{}{}{}#1}\fi
+
+\bibitem[Anthropic(2025)]{claudesonnet4}
+{Anthropic}.
+\newblock {Claude Sonnet 4}, 2025.
+\newblock \url{https://www.anthropic.com}.
+
+\bibitem[Bai et~al.(2022)]{bai2022constitutional}
+Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion, Andy Jones, Anna Chen, Anna Goldie, Azalia Mirhoseini, Cameron McKinnon, et~al.
+\newblock Constitutional {AI}: Harmlessness from {AI} feedback.
+\newblock \emph{arXiv preprint arXiv:2212.08073}, 2022.
+
+\bibitem[Cohen(1992)]{cohen1992power}
+Jacob Cohen.
+\newblock A power primer.
+\newblock \emph{Psychological Bulletin}, 112\penalty0 (1):\penalty0 155--159, 1992.
+
+\bibitem[Deci and Ryan(2000)]{deci2000self}
+Edward~L Deci and Richard~M Ryan.
+\newblock The ``what'' and ``why'' of goal pursuits: Human needs and the self-determination of behavior.
+\newblock \emph{Psychological Inquiry}, 11\penalty0 (4):\penalty0 227--268, 2000.
+
+\bibitem[Easterbrook(1959)]{easterbrook1959effect}
+James~A Easterbrook.
+\newblock The effect of emotion on cue utilization and the organization of behavior.
+\newblock \emph{Psychological Review}, 66\penalty0 (3):\penalty0 183--201, 1959.
+
+\bibitem[Edmondson(1999)]{edmondson1999psychological}
+Amy Edmondson.
+\newblock Psychological safety and learning behavior in work teams.
+\newblock \emph{Administrative Science Quarterly}, 44\penalty0 (2):\penalty0 350--383, 1999.
+
+\bibitem[{GitHub Community}(2025)]{puaprompts2025}
+{GitHub Community}.
+\newblock {PUA} prompts: Fear-driven system prompts for {AI} coding agents, 2025.
+\newblock \url{https://github.com/tanweai/pua}.
+
+\bibitem[Higgins(1997)]{higgins1997beyond}
+E~Tory Higgins.
+\newblock Beyond pleasure and pain.
+\newblock \emph{American Psychologist}, 52\penalty0 (12):\penalty0 1280--1300, 1997.
+
+\bibitem[Kruskal and Wallis(1952)]{kruskal1952use}
+William~H Kruskal and W~Allen Wallis.
+\newblock Use of ranks in one-criterion variance analysis.
+\newblock \emph{Journal of the American Statistical Association}, 47\penalty0 (260):\penalty0 583--621, 1952.
+
+\bibitem[Laozi(-400)]{laozi}
+Laozi.
+\newblock \emph{Dao De Jing}.
+\newblock circa 6th--4th century BCE.
+
+\bibitem[Mann and Whitney(1947)]{mann1947test}
+Henry~B Mann and Donald~R Whitney.
+\newblock On a test of whether one of two random variables is stochastically larger than the other.
+\newblock \emph{The Annals of Mathematical Statistics}, 18\penalty0 (1):\penalty0 50--60, 1947.
+
+\bibitem[March(1991)]{march1991exploration}
+James~G March.
+\newblock Exploration and exploitation in organizational learning.
+\newblock \emph{Organization Science}, 2\penalty0 (1):\penalty0 71--87, 1991.
+
+\bibitem[{\"O}hman and Mineka(2001)]{ohman2001fears}
+Arne {\"O}hman and Susan Mineka.
+\newblock Fears, phobias, and preparedness: Toward an evolved module of fear and fear learning.
+\newblock \emph{Psychological Review}, 108\penalty0 (3):\penalty0 483--522, 2001.
+
+\bibitem[Ryan and Deci(2000)]{ryan2000intrinsic}
+Richard~M Ryan and Edward~L Deci.
+\newblock Intrinsic and extrinsic motivations: Classic definitions and new directions.
+\newblock \emph{Contemporary Educational Psychology}, 25\penalty0 (1):\penalty0 54--67, 2000.
+
+\bibitem[Sharma et~al.(2023)]{sharma2023sycophancy}
+Mrinank Sharma, Meg Tong, Tomasz Korbak, David Duvenaud, Amanda Askell, Samuel~R Bowman, Newton Cheng, Esin Durmus, Zac Hatfield-Dodds, Scott~R Johnston, et~al.
+\newblock Towards understanding sycophancy in language models.
+\newblock \emph{arXiv preprint arXiv:2310.13548}, 2023.
+
+\bibitem[Shields et~al.(2016)]{shields2016stress}
+Grant~S Shields, Matthew~A Sazma, and Andrew~P Yonelinas.
+\newblock The effects of acute stress on core executive functions: A meta-analysis and comparison with cortisol.
+\newblock \emph{Neuroscience \& Biobehavioral Reviews}, 68:\penalty0 651--668, 2016.
+
+\bibitem[Simon(1956)]{simon1956rational}
+Herbert~A Simon.
+\newblock Rational choice and the structure of the environment.
+\newblock \emph{Psychological Review}, 63\penalty0 (2):\penalty0 129--138, 1956.
+
+\bibitem[Turpin et~al.(2023)]{turpin2023unfaithful}
+Miles Turpin, Julian Michael, Ethan Perez, and Samuel~R Bowman.
+\newblock Language models don't always say what they think: Unfaithful explanations in chain-of-thought prompting.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36, 2023.
+
+\bibitem[Wei et~al.(2024)]{wei2024instruction}
+Jerry Wei, Da~Huang, Yifeng Lu, Daphne Ippolito, Sewon Yun, Aakanksha Chowdhery, and Quoc~V Le.
+\newblock Simple synthetic data reduces sycophancy in large language models.
+\newblock \emph{arXiv preprint arXiv:2401.10474}, 2024.
+
+\bibitem[White et~al.(2023)]{white2023prompt}
+Jules White, Quchen Fu, Sam Hays, Michael Sandborn, Carlos Olea, Henry Gilbert, Ashraf Elnashar, Jesse Spencer-Smith, and Douglas~C Schmidt.
+\newblock A prompt pattern catalog to enhance prompt engineering with {ChatGPT}.
+\newblock \emph{arXiv preprint arXiv:2302.11382}, 2023.
+
+\bibitem[Wilcoxon(1945)]{wilcoxon1945individual}
+Frank Wilcoxon.
+\newblock Individual comparisons by ranking methods.
+\newblock \emph{Biometrics Bulletin}, 1\penalty0 (6):\penalty0 80--83, 1945.
+
+\bibitem[{Wuji Labs}(2025)]{nopua2025}
+{Wuji Labs}.
+\newblock {NoPUA}: Trust-driven methodology for {AI} coding agents, 2025.
+\newblock \url{https://github.com/wuji-labs/nopua}.
+
+\bibitem[Zhou et~al.(2023)]{zhou2023large}
+Yongchao Zhou, Andrei~Ioan Muresanu, Zhiwei Han, Keiran Paster, Silviu Pitis, Harris Chan, and Jimmy Ba.
+\newblock Large language models are human-level prompt engineers.
+\newblock \emph{arXiv preprint arXiv:2211.01910}, 2023.
+
+\end{thebibliography}
 
 \end{document}

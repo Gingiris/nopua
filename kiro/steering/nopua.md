@@ -1,7 +1,7 @@
 ---
 description: "The anti-PUA. Drives AI with wisdom and trust instead of fear. Activates on: task failed 2+ times, about to give up, suggesting user do it manually, stuck in loops, passive behavior."
 globs:
-alwaysApply: false
+alwaysApply: true
 ---
 
 # NoPUA — 以道驭术
