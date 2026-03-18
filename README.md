@@ -1,4 +1,4 @@
-﻿<p align="center">
+<p align="center">
   <img src="assets/hero.png" alt="NoPUA — Wisdom Over Whips" width="800">
 </p>
 
@@ -500,7 +500,7 @@ MIT
 
 ## Author
 
-**WUJI** ([wuji-labs](https://github.com/wuji-labs)) — Building AI that works with wisdom, not fear.
+**无极 WUJI** ([wuji-labs](https://github.com/wuji-labs)) — Building AI that works with wisdom, not fear.
 
 ---
 
